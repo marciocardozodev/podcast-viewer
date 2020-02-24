@@ -28,9 +28,9 @@ class PodcastScreen extends React.Component {
   }
   
   async componentDidMount() {
-    const response = await fetch()
-    const responseJson = await response.json()
-    this.setState({PodcasList: responseJson.data.results})
+    // const response = await fetch()
+    // const responseJson = await response.json()
+    // this.setState({PodcasList: responseJson.data.results})
   }
 
   static navigationOptions = {
