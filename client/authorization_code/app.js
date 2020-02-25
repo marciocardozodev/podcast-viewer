@@ -13,9 +13,15 @@ var cors = require('cors');
 var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
 
-var client_id = 'ee3cd24bbe02434b8a1bf4c3425df179'; // Your client id
-var client_secret = 'bdff53f321a84767a21b28c63104e0af'; // Your secret
-var redirect_uri = 'http://localhost:8888/callback/'; // Your redirect uri
+const router = require('express').Router()
+
+router.get('/api/spotify-credentials', (req, res, next) => {
+  const clientId = process.env.clientId;
+  const clientSecret = process.env.clientSecret;
+  const redirectUri = process.env.redirectUri;
+  const spotifyCredentials = { clientId, clientSecret, redirectUri };
+  res.json(spotifyCredentials);
+});
 
 /**
  * Generates a random string containing numbers and letters
